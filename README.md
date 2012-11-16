@@ -41,7 +41,7 @@ gem install webkit_remote_unstable
 See the project's
 [YARD documentation](http://rdoc.info/github/pwnall/webkit_remote_unstable/master/)
 and
-[test cases](https://github.com/pwnall/webkit_remote_unstable/tree/master/test/)
+[test cases](https://github.com/pwnall/webkit_remote_unstable/tree/master/test/webkit_remote_unstable)
 for usage examples.
 
 
@@ -63,4 +63,3 @@ unstable features at
 ## Copyright
 
 Copyright (c) 2012 Victor Costan. See LICENSE.txt for further details.
-
