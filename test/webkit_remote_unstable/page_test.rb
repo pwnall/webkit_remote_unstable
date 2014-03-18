@@ -11,12 +11,6 @@ describe WebkitRemote::Client::Page do
     @client.close
   end
 
-  describe 'can_set_device_metrics?' do
-    it 'returns true in Chrome' do
-      @client.can_set_device_metrics?.must_equal true
-    end
-  end
-
   describe 'device_metrics=' do
     before :each do
       @client.device_metrics = { width: 512, height: 480, fit_window: true }

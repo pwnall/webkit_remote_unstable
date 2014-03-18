@@ -4,15 +4,6 @@ class Client
 
 # Unstable API for the Page domain.
 module Page
-  # Checks if the debugger can override the browser's device metrics.
-  #
-  # @return [Boolean] true if WebkitRemote::Client::Page#device_metrics= can be
-  #     successfully called
-  def can_set_device_metrics?
-    response = @rpc.call 'Page.canOverrideDeviceMetrics'
-    !!response['result']
-  end
-
   # Overrides the values of device screen dimensions.
   #
   # This changes the properties of window.screen and the results of CSS media
@@ -27,6 +18,12 @@ module Page
   #     factor value
   # @option new_device_metrics [Boolean] fit_window true if views that exceed
   #     the browser window area should be scaled to fit
+  # @option new_device_metrics [Number] device_scale override for the device
+  #     scale factor value
+  # @option new_device_metrics [Boolean] text_autosizing true if the text
+  #     autosizing feature should be overridden
+  # @option new_device_metrics [Boolean] emulate_viewport true if the viewport
+  #     meta tag should not be respected
   #
   # @return [Hash<Symbol, Object>] new_device_metrics
   def device_metrics=(new_device_metrics)
@@ -35,12 +32,17 @@ module Page
       height: new_device_metrics[:height] || nil,
       font_scale: new_device_metrics[:font_scale] || nil,
       fit_window: new_device_metrics[:fit_window] || false,
+      scale: new_device_metrics[:scale] || nil,
+      emulate_viewport: new_device_metrics[:emulate_viewport] || false,
     }.freeze
     @rpc.call 'Page.setDeviceMetricsOverride',
               width: new_device_metrics[:width] || 0,
               height: new_device_metrics[:height] || 0,
               fontScaleFactor: new_device_metrics[:font_scale] || 1,
-              fitWindow: new_device_metrics[:fit_window] || false
+              fitWindow: new_device_metrics[:fit_window] || false,
+              deviceScaleFactor: new_device_metrics[:scale] || 1,
+              emulateViewport: new_device_metrics[:emulate_viewport] || false,
+              textAutosizing: new_device_metrics[:text_autosizing] || false
     @device_metrics = new_device_metrics
     new_device_metrics
   end
