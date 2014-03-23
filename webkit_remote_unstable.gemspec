@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "webkit_remote_unstable"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Victor Costan"]
-  s.date = "2014-03-18"
+  s.date = "2014-03-23"
   s.description = "Launches Google Chrome instances and controls them via the Remote Debugging server"
   s.email = "victor@costan.us"
   s.extra_rdoc_files = [
@@ -27,12 +27,15 @@ Gem::Specification.new do |s|
     "lib/webkit_remote_unstable.rb",
     "lib/webkit_remote_unstable/css.rb",
     "lib/webkit_remote_unstable/css_events.rb",
+    "lib/webkit_remote_unstable/dom.rb",
     "lib/webkit_remote_unstable/page.rb",
     "test/fixtures/config.ru",
     "test/fixtures/html/css.html",
+    "test/fixtures/html/dom.html",
     "test/fixtures/html/page.html",
     "test/helper.rb",
     "test/webkit_remote_unstable/css_test.rb",
+    "test/webkit_remote_unstable/dom_test.rb",
     "test/webkit_remote_unstable/page_test.rb",
     "webkit_remote_unstable.gemspec"
   ]
