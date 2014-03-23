@@ -18,6 +18,7 @@ remote debugging protocol.
 
 * Overriding device attributes
 * CSS computed styles
+* DOM hit testing and box model information
 
 
 ## Requirements
