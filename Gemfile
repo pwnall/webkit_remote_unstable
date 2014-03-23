@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'webkit_remote', '>= 0.5.2'
+gem 'webkit_remote', '>= 0.5.3'
 
 group :development do
   gem 'bundler', '>= 1.5.3'

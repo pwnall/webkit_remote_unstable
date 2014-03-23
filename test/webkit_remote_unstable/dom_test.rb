@@ -31,6 +31,20 @@ describe WebkitRemote::Client::Dom do
     end
   end
 
+  describe 'DomNode#focus' do
+    before do
+      @node = @client.dom_root.query_selector '#focus_test'
+      @client.console_events = true
+    end
+
+    it 'gets the focus to the correct node' do
+      @node.focus
+      skip "For some reason, DOM.focus doesn't work."
+      events = @client.wait_for type: WebkitRemote::Event::ConsoleMessage
+      events.last.message.text.must_equal('Focus received.')
+    end
+  end
+
   describe '#dom_node_at' do
     before do
       @node = @client.dom_root.query_selector '#box_test'

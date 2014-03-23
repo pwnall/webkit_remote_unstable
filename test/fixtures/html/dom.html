@@ -22,5 +22,12 @@
   </head>
   <body>
     <p id="box_test">Box model test</p>
+    <button type="button" id="focus_test">Focus test</button>
+    <script type="text/javascript">
+      var node = document.querySelector("#focus_test");
+      node.addEventListener("focus", function (event) {
+        console.log("Focus received.");
+      });
+    </script>
   </body>
 </html>

@@ -37,6 +37,14 @@ class DomNode
     WebkitRemote::Client::DomBoxModel.new result['model']
   end
 
+  # Causes this node to receive the input focus.
+  #
+  # @return [WebkitRemote::Client] self
+  def focus
+    @client.rpc.call 'DOM.focus', nodeId: @remote_id
+    self
+  end
+
   # @private Called by the DomNode constructor.
   def initialize_unstable
     @box_model = nil

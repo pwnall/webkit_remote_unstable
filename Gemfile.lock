@@ -64,7 +64,7 @@ GEM
       multi_json
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    webkit_remote (0.5.2)
+    webkit_remote (0.5.3)
       posix-spawn (>= 0.3.8)
       ws_sync_client (>= 0.1.1)
     websocket (1.1.2)
@@ -87,5 +87,5 @@ DEPENDENCIES
   rack-contrib (>= 1.1.0)
   rdoc (>= 4.1.1)
   simplecov (>= 0.8.2)
-  webkit_remote (>= 0.5.2)
+  webkit_remote (>= 0.5.3)
   yard (>= 0.8.7.3)
