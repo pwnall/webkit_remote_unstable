@@ -3,4 +3,5 @@ require 'webkit_remote'
 
 require 'webkit_remote_unstable/css.rb'
 require 'webkit_remote_unstable/css_events.rb'
+require 'webkit_remote_unstable/dom.rb'
 require 'webkit_remote_unstable/page.rb'
